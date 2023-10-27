@@ -10,15 +10,14 @@ const compression = require('compression')
 // Initializations
 const app = express();
 const port = process.env.PORT || 3001
-const connectionUrl = process.env.CONNECTION_URL
-
+const connectionUrl = process.env.MONGODB_CONNECTION_URL
 // Database configuration
-/* mongoose.connect(connectionUrl).then(() => {
+mongoose.connect(connectionUrl).then(() => {
     console.log('Connected to the database.')
 }).catch((err) => {
     console.log('ERROR: Cannot connect to the database.')
     console.log(err)
-}) */
+})
 
 // Middleware
 app.use(helmet({ contentSecurityPolicy: false }))
